@@ -5,25 +5,20 @@
 #include <vector>
 using namespace std;
 
-void print(vector<int> v)
-{
-	for(int i: v)
-	{
-		cout << i <<", ";
-	}
-	cout <<endl;
-}
+
 int main(void)
 {
-	ifstream file("data", fstream::in);
+	ifstream file("day1_input", fstream::in);
 	vector<int> occured_frequency;
 	vector<int> values;
-	int curr_value, frequency =0;
+	int curr_value, frequency =0, sum =0;
 	occured_frequency.push_back(0);
 	while(file>>curr_value)
 	{
+		sum += curr_value;
 		values.push_back(curr_value);
 	}
+	cout << "Part 1 answer is: " << sum <<endl << "Part 2 answer is: ";
 	while(true)
 	{
 		for(int curr_value : values)
